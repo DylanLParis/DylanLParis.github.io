@@ -64,6 +64,11 @@
                     this.tickets = await response.json()
                     //tickets = data.filter( (item) => item.major == majSelect );     
                 },
+		    get25over() {
+           this.showTable = true
+           // filter data form given meal
+           this.tickets = this.results.filter((ticket) => item.id == item.id);
+       }
             }
           })
       
