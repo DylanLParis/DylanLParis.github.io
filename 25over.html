@@ -52,13 +52,12 @@
        let app = Vue.createApp({
             data() {     // returns an object of data
 		return {
-			violator_sex: 'Female',
+			amountOver = (ticket.actual_speed - ticket.posted_speed),
 			tickets: [],           // array to hold student data
                 }
             },
             created() {      // section executes as page loads
                 this.getData()
-		this.get25over()
 		    // load json data as page loads
             },
             methods: {    // ajax request
@@ -70,7 +69,7 @@
 	       get25over() {
 		       this.showTable = true
 		       // filter data form given meal
-		       this.tickets = this.results.tickets((ticket) => ticket.violator_sex == this.violator_sex);
+		       this.tickets = this.results.tickets((ticket) => ticket.amountOver > 25);
 	       }
        	    },
 	 
