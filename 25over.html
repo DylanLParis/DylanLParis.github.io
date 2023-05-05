@@ -52,7 +52,7 @@
        let app = Vue.createApp({
             data() {     // returns an object of data
                 return {
-                    tickets: [],           // array to hold student data
+                    tickets.filter(ticket => ticket.violator_sex == "female"): [],           // array to hold student data
                 }
             },
             created() {      // section executes as page loads
@@ -62,7 +62,6 @@
                 async getData() {
                     const response = await fetch('tickets1.json')
                     this.tickets = await response.json()
-		    this.tickets = this.results.filter((ticket) => ticket.violator_sex == ticket.violator_sex);
                 } //try to update table
             	},
           })
