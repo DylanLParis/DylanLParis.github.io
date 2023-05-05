@@ -57,7 +57,9 @@
                 }
             },
             created() {      // section executes as page loads
-                this.getData()  // load json data as page loads
+                this.getData()
+		this.get25over()
+		    // load json data as page loads
             },
             methods: {    // ajax request
                 async getData() {
@@ -65,7 +67,7 @@
                     this.tickets = await response.json()
                 }
             	},
-	       getMenu() {
+	       get25over() {
 		       this.showTable = true
 		       // filter data form given meal
 		       this.tickets = this.results.tickets((ticket) => ticket.violator_sex == this.violator_sex);
