@@ -68,9 +68,8 @@
                     this.tickets = await response.json()
             	},
 		get25over() {
-           	    this.showTable = true
-                    // filter data form given meal
-                    this.tickets = this.results.filter((item) => item.meal == this.meal);
+           	    return tickets.filter(ticket.tid == 20124);
+		}
        }
           })
       
