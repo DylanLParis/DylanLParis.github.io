@@ -27,7 +27,11 @@
 <div id="ticketApp">
 
      <h2>Tickets July 4, 2014, Minneapolis/St. Paul</h2>
-          <table class="table table-bordered table-striped">
+          <div style='padding: 5px;'> 
+		  <select  v-on:change="get25over()" v-model='meal'>
+		  <option value='Female'>Filter for speeds > 25mph over</option>
+		  </select> Select a Menu
+	  </div>
               <tr>
                   <th>Ticket ID</th>
                   <th>Time</th>
@@ -62,8 +66,12 @@
                 async getData() {
                     const response = await fetch('tickets1.json')
                     this.tickets = await response.json()
-                }
-            	},	 
+            	},
+		get25over() {
+           	    this.showTable = true
+                    // filter data form given meal
+                    this.tickets = this.results.filter((item) => item.meal == this.meal);
+       }
           })
       
       app.mount('#ticketApp')   //in which div to mount the vue app
