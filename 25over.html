@@ -64,6 +64,13 @@
                     this.tickets = await response.json()
                 } //try to update table
             	},
+	       getMenu() {
+		       this.showTable = true
+		       // filter data form given meal
+		       this.tickets = this.results.tickets((ticket) => ticket.violator_sex == this.violator_sex);
+	       }
+       	    },
+	 
           })
       
       app.mount('#ticketApp')   //in which div to mount the vue app
