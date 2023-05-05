@@ -36,7 +36,7 @@
                   <th>MPH Over</th>
                   <th>Violator Sex</th>
               </tr>
-              <tr v-for = "result in results">
+              <tr v-for = "ticket in tickets">
                   <td>{{ticket.tid}}</td>
                   <td>{{ticket.stop_time}}</td>
                   <td>{{ticket.posted_speed}}</td>
@@ -51,10 +51,8 @@
 <script>
        let app = Vue.createApp({
             data() {     // returns an object of data
-                const tickets: [],
-		const results = tickets.(tickets.filter(ticket => ticket.violator_sex == "Female"): [],
 		return {
-                    results: [],           // array to hold student data
+                    tickets: [],           // array to hold student data
                 }
             },
             created() {      // section executes as page loads
