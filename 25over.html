@@ -64,10 +64,10 @@
                     this.tickets = await response.json()
 
                 },
-		    get25over() {
-           this.showTable = true
-           this.tickets = this.results.filter((ticket) => item.id == item.id);
-       }
+		get25over() {
+           	    this.showTable = true
+                    this.tickets = this.results.filter((ticket) => ticket.id == ticket.id);
+            }
             }
           })
       
